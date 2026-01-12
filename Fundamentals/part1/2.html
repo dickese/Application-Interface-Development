@@ -25,6 +25,8 @@
         <br>
     <button id="btnCalc">Calculate</button>
 
+    <p id="res"></p>
+
 
     <script>
         const calcBmi = (mass, height) => {
@@ -40,8 +42,26 @@
             const markBMI = document.getElementById("BMIMark")
             const johnBMI = document.getElementById("BMIJohn")
 
-            markBMI.value =calcBmi(massMark, heightMark)
-            johnBMI.value = calcBmi(massJohn, heightJohn)
+
+        
+            const BMIMark = calcBmi(massMark, heightMark)
+            const BMIJohn = calcBmi(massJohn, heightJohn)
+
+            markBMI.value = BMIMark
+            johnBMI.value = BMIJohn
+
+            const res = document.getElementById("res")
+
+            var result;
+            if(BMIMark >= BMIJohn){
+                result = "Mark's BMI is higher than John's!"
+            }
+            else {
+                result = "John's BMI is higher than Mark's!"
+            }
+
+            console.log(result);
+            res.innerHTML = result
         }
 
 
