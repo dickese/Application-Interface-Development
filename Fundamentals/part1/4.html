@@ -28,7 +28,8 @@
 
             const billValue = parseFloat(document.getElementById("bill").value)
             const tipValue = handleTipValue(billValue)
-            return 'The bill was ' + billValue + ', the tip was ' +  tipValue + ', and the total value ' + parseFloat(billValue) + parseFloat(tipValue)
+            const total = parseFloat(billValue) + parseFloat(tipValue)
+            return 'The bill was ' + billValue + ', the tip was ' +  tipValue + ', and the total value ' + total
         }
 
         const btn = document.getElementById("btnTotal")
