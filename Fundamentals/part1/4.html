@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="" >
+                <span>Bill Value:</span>
+                <input type="text" name="" id="bill" style="width: 50px;">
+    </div>
+
+    <button id="btnTotal">Calc Total</button>
+    <p id="total"></p>
+
+    <script>
+
+
+        const handleTipValue = (billValue) => {
+            return billValue >= 50 && billValue <= 300
+             ? billValue * 15 /100 
+             : billValue * 20 /100 
+        }
+
+        const handleBtnCalcTotal = () => {
+
+            const billValue = parseFloat(document.getElementById("bill").value)
+            const tipValue = handleTipValue(billValue)
+            return 'The bill was ' + billValue + ', the tip was ' +  tipValue + ', and the total value ' + parseFloat(billValue) + parseFloat(tipValue)
+        }
+
+        const btn = document.getElementById("btnTotal")
+        const totalField = document.getElementById("total")
+        btn.onclick = () =>{
+            const res = handleBtnCalcTotal()
+            totalField.innerHTML = res
+            console.log(res);
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>
