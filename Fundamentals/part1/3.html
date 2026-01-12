@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="" style="display: flex; gap: 50px;">
+        <div class="">
+            <h2>
+                Dolphin Teams
+            </h2>
+            <div class="" >
+                <span>Score 1:</span>
+                <input type="text" name="" id="d1" style="width: 50px;">
+            </div>
+            <div class="" >
+                <span>Score 2:</span>
+                <input type="text" name="" id="d2" style="width: 50px;">
+            </div>
+            <div class="" >
+                <span>Score 3:</span>
+                <input type="text" name="" id="d3" style="width: 50px;">
+            </div>
+            <div class="" >
+                <span>Avg: </span>
+                <input type="text" name="" id="dAvg" style="width: 50px;">
+            </div>
+        </div>
+    
+        <div class="">
+            <h2>
+                Koala Teams
+            </h2>
+            <div class="" >
+                <span>Score 1:</span>
+                <input type="text" name="" id="k1" style="width: 50px;">
+            </div>
+            <div class="" >
+                <span>Score 2:</span>
+                <input type="text" name="" id="k2" style="width: 50px;">
+            </div>
+            <div class="" >
+                <span>Score 3:</span>
+                <input type="text" name="" id="k3" style="width: 50px;">
+            </div>
+            <div class="" >
+                <span>Avg:</span>
+                <input type="text" name="" id="kAvg" style="width: 50px;">
+            </div>
+        </div>
+    </div>
+
+
+    <button id="btnFind" style="margin-top:  20px;">Find winner</button>
+
+
+    <p id="res"></p>
+
+    <script>
+        
+
+        const calcAvg = (s1, s2, s3) =>{
+            return (s1 + s2 + s3) / 3
+        }
+
+
+        const handleBtnFind = () =>{
+            const d1s = parseInt(document.getElementById("d1").value)
+            const d2s = parseInt(document.getElementById("d2").value)
+            const d3s = parseInt(document.getElementById("d3").value)
+            const k1s = parseInt(document.getElementById("k1").value)
+            const k2s = parseInt(document.getElementById("k2").value)
+            const k3s = parseInt(document.getElementById("k3").value)
+
+            const dAvg = calcAvg(d1s,d2s,d3s)
+            const kAvg = calcAvg(k1s,k2s,k3s)
+
+            const d = document.getElementById("dAvg")
+            const k = document.getElementById("kAvg")
+
+            d.value = dAvg
+            k.value = kAvg
+
+            var  res;
+
+            if(dAvg == kAvg && dAvg >= 100){
+                 res = "Draw"
+            }
+            else if(dAvg > kAvg){
+                if(dAvg >= 100)
+                    res = "Dolphins Team wins"
+                else
+                    res = "No Team Wins"
+            }
+            else {
+                if(kAvg >= 100)
+                    res = "Koala Team wins"
+                else 
+                    res = "No Team Wins"
+            }
+            const resF = document.getElementById("res")
+            resF.innerHTML = res
+            console.log(res);
+        }
+
+        const btn = document.getElementById("btnFind")
+        btn.onclick = () =>{
+            handleBtnFind()
+        }
+
+    </script>
+
+
+</body>
+</html>
