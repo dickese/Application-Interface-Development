@@ -1,6 +1,8 @@
 import './App.css';
 import productImage from './assets/product.png';
 import ProductList from './component/Bài1_ProductCard/ProductList/ProductList.jsx';
+import Button from './component/Bài2_ButtonComponent/Button.jsx';
+import ButtonComponents from './component/Bài2_ButtonComponent/ButtonComponents.jsx';
 const data = [
   {
     image: productImage,
@@ -26,9 +28,15 @@ const data = [
 
 function App() {
   return (
-    <>
-      <ProductList productList={data} />
-    </>
+    <div className="">
+      {/* 1. Product card */}
+        <ProductList productList={data} />
+
+
+        {/* 2. Button component */}
+        <ButtonComponents/>
+        
+    </div>
   );
 }
 

@@ -1,0 +1,53 @@
+.btn{
+    color: white;
+    padding: 6px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    transition: background-color 0.25 ease;
+}
+
+.btn-primary{
+    background-color: deepskyblue;
+
+}
+.btn-primary:hover{
+    background-color: blue;
+
+}
+.btn-danger{
+    background-color: red;
+
+}
+.btn-danger:hover{
+    background-color: brown;
+
+}
+.btn-success{
+    background-color: greenyellow;
+
+}
+.btn-success:hover{
+    background-color: green;
+
+}
+
+
+.group{
+    width: 500px;
+    display:  flex;
+    justify-content: space-between;
+
+}
+
+.btn-wrapper{
+    text-align: center;
+}
+
+.title{
+    color: brown;
+    padding: 20px;
+}
