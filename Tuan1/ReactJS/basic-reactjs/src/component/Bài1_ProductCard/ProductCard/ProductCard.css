@@ -1,0 +1,61 @@
+* {
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.wrapperImg {
+  width: 100%;
+  height: 200px; /* khung ảnh cố định */
+  overflow: hidden; /* cắt phần ảnh thừa */
+}
+
+.wrapperInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ảnh phủ kín khung */
+  display: block;
+}
+
+.name {
+}
+.price {
+}
+
+.btn {
+  background-color: deepskyblue;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+}
+
+
+.btn:hover{
+  background-color: darkcyan;
+}

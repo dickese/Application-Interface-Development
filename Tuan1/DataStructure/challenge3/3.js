@@ -37,7 +37,7 @@ console.log(
 );
 
 console.log('4. Print event by half');
-const res = gameEvents.forEach((value, key) => {
+gameEvents.forEach((value, key) => {
   if (key > 0 && key <= 45) {
     console.log(`[FIRST HALF] ${key} : ${value}`);
   } else {
