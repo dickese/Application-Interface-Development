@@ -1,0 +1,36 @@
+.alert-backdrop {
+  position: fixed;
+  inset: 0; 
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+
+.alert-box {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.alert-title {
+  margin-bottom: 12px;
+}
+
+.alert-message {
+  margin-bottom: 20px;
+}
+
+.alert-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}

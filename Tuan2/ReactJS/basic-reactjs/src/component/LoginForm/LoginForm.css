@@ -1,6 +1,6 @@
 
 .form{
-    width: 500px;
+    width: 400px;
     height: 250px;
     display: flex;
     flex-direction: column;
@@ -73,7 +73,7 @@ input:hover{
     border-color: blue;
 }
 
-.btn{
+.btn-login{
     background-color: cornflowerblue;
     padding: 6px 10px;
     border-radius: 10px;

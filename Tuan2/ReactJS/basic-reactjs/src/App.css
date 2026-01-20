@@ -1,0 +1,14 @@
+*{
+    margin:  auto;
+    padding: 0;
+}
+
+.login-forms{
+    display: flex;
+
+}
+
+.bai-4{
+    margin-top: 50px;
+    text-align: center;
+}

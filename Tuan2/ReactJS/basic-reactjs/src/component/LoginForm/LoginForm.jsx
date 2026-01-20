@@ -1,11 +1,11 @@
-import { useState } from 'react'
 import './LoginForm.css'
 const LoginForm = (props) => {
     const formType = `form form-${props.type}`
   return (
+
     <div className={formType}>
             <div className="wrapper-close">
-                <span className='close'>X</span>
+                <span className='close' onClick={props.onClose}>X</span>
             </div>
             <div className="wrapper-info">
                 <div className="line-info">
@@ -23,12 +23,11 @@ const LoginForm = (props) => {
 
             </div>
             <div className="wrapper-btn">
-                <button className='btn'>
+                <button className='btn-login'>
                     Login
                 </button>
             </div>
     </div>
   )
 }
-export {isOpen, setOpen}
 export default LoginForm
