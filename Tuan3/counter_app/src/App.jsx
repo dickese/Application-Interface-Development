@@ -8,21 +8,20 @@ function App() {
     <>
       <div className=''>
         <h1>Counter App</h1>
-        <h1>{count}</h1>
-        <div style={{display: "flex", gap: "10px", justifyContent: "center"}}>
+        <h1 style={count > 10 ? { color: 'red' } : {}}>{count}</h1>
+        <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
           <button
             style={{
               backgroundColor: 'blue',
               color: 'white',
               padding: '8px 24px',
             }}
-            onClick={() => {setCount(prev => {
-
-              const value = prev + 1
-              console.log(`Chọn + : ${prev} + 1 = ${value}`)
-              return value
-            })
-        
+            onClick={() => {
+              setCount((prev) => {
+                const value = prev + 1;
+                console.log(`Chọn + : ${prev} + 1 = ${value}`);
+                return value;
+              });
             }}
           >
             +
@@ -54,9 +53,9 @@ function App() {
               padding: '8px 24px',
             }}
             onClick={() => {
-              setCount(0)
-              console.log("Chọn reset")
-              return 0
+              setCount(0);
+              console.log('Chọn reset');
+              return 0;
             }}
           >
             Reset
