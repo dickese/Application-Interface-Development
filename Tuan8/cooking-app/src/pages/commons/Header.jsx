@@ -1,12 +1,12 @@
 import { Search } from "lucide-react";
 import { useState } from "react";
 import AuthDialog from "./auth-page";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [authView, setAuthView] = useState("login");
-  const navLinks = ["What to cook", "Recipes", "Ingredients", "Occasions", "About Us"];
-
+  const navLinks = [{label: "What to cook", path: ""}, {label: "Recipes", path: "/recipe"},{label:  "Ingredients", path: "/"}, {label : "Occasions", path: "/"}, {label: "About Us", path: '/'}];
     const openLogin = () => {
     setAuthView("login");
     setIsAuthOpen(true);
@@ -46,13 +46,13 @@ const Header = () => {
       {/* Navigation */}
       <nav className="hidden lg:flex items-center gap-6">
         {navLinks.map((link) => (
-          <a
+          <Link
             key={link}
-            href="#"
+            to={`${link.path}`}
             className="text-sm text-gray-600 hover:text-pink-500 transition-colors"
           >
-            {link}
-          </a>
+            {link.label}
+          </Link>
         ))}
       </nav>
 
@@ -64,12 +64,12 @@ const Header = () => {
         >
           Login
         </button>
-        <button 
-          onClick={openRegister}
+        <Link 
+        to={"/subscibe"}
           className="bg-pink-500 text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-pink-600 transition-colors"
         >
           Subscribe
-        </button>
+        </Link>
       </div>
 
       {/* Auth Dialog */}

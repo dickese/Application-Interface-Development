@@ -1,22 +1,14 @@
 import { useState } from "react";
 import { Bookmark, ChevronLeft, ChevronRight } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
+import {recipes} from '../../../data/mockData.js'
 const RecipeGrid = ({ title = "Salad", count = 32 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [sortBy, setSortBy] = useState("A-Z");
   const totalPages = 10;
+  const navigate = useNavigate()
 
-  const recipes = [
-    { id: 1, name: "Cucumber salad, cherry tomatoes", time: "20 minutes", image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&h=200&fit=crop" },
-    { id: 2, name: "Italian-style tomato salad", time: "15 minutes", image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=300&h=200&fit=crop" },
-    { id: 3, name: "Potato Salad", time: "30 minutes", image: "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=300&h=200&fit=crop" },
-    { id: 4, name: "Salad with cabbage and shrimp", time: "25 minutes", image: "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=300&h=200&fit=crop" },
-    { id: 5, name: "Five-color salad", time: "20 minutes", image: "https://images.unsplash.com/photo-1607532941433-304659e8198a?w=300&h=200&fit=crop" },
-    { id: 6, name: "Corn Salad", time: "15 minutes", image: "https://images.unsplash.com/photo-1595670002930-b30d297a28df?w=300&h=200&fit=crop" },
-    { id: 7, name: "Salad with cabbage and shrimp", time: "25 minutes", image: "https://images.unsplash.com/photo-1547496502-affa22d38842?w=300&h=200&fit=crop" },
-    { id: 8, name: "Lotus delight salad", time: "30 minutes", image: "https://images.unsplash.com/photo-1604497181015-76590d828b75?w=300&h=200&fit=crop" },
-    { id: 9, name: "Avocado Salad", time: "15 minutes", image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&h=200&fit=crop" },
-  ];
+
 
   const getPageNumbers = () => {
     const pages = [];
@@ -56,7 +48,11 @@ const RecipeGrid = ({ title = "Salad", count = 32 }) => {
       {/* Recipe Grid */}
       <div className="grid grid-cols-3 gap-5 mb-8">
         {recipes.map((recipe) => (
-          <div key={recipe.id} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div key={recipe.id} 
+          onClick={() => {
+            navigate
+          }}
+          className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
             <div className="relative">
               <img
                 src={recipe.image}
